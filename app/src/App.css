@@ -1,0 +1,23 @@
+.App {
+  text-align: center;
+
+}
+.appTitle{
+  color: whitesmoke;
+}
+.processArea{
+  margin: 24px;
+  background-color: whitesmoke;
+}
+.tableRow{
+  display: flex;
+  justify-content:space-between;
+}
+.tableArea{
+  border-spacing: 24px;
+
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
