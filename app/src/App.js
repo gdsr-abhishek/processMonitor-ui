@@ -5,15 +5,18 @@ import {useEffect, useState} from 'react';
    const [rows,setRows] = useState([{}]);
    useEffect(()=>{async function getData(){
    try{
-    const res=  await fetch("http://localhost:8000/ps/all")
-    const result = await res.json();
-    setRows(result);
+    fetch("http://localhost:8080/ps/all").then((res)=>{
+      const result = res.json();
+      setRows(result);
+    }).catch((err)=>{
+console.log(err);
+    })
+    
   } catch (error) {
     console.error('Error fetching data:', error.message);
   }
   }
-  getData();
-  },[rows]);
+  },[]);
   return (
     <div className="App">
     
@@ -40,7 +43,6 @@ import {useEffect, useState} from 'react';
           </tr>
           </thead>
           <tbody>
-        {rows.map(row=><RowComponent key={row.PID} row ={row}/>)}
         </tbody>
         </table>
       </div>
