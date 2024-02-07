@@ -3,10 +3,11 @@ import {useEffect, useState} from 'react';
 
  let App= ()=>{
    const [rows,setRows] = useState([{}]);
-   useEffect(()=>{async function getData(){
+   useEffect(function getData(){
    try{
-    fetch("http://localhost:8080/ps/all").then((res)=>{
-      const result = res.json();
+    fetch("http://localhost:8080/ps/all").then( async (res)=>{
+      const result = await res.json();
+      console.log(result);
       setRows(result);
     }).catch((err)=>{
 console.log(err);
@@ -14,7 +15,6 @@ console.log(err);
     
   } catch (error) {
     console.error('Error fetching data:', error.message);
-  }
   }
   },[]);
   return (
@@ -27,7 +27,6 @@ console.log(err);
       <div className="processArea">
       <div >
         <table className="tableArea">
-         <thead>
           <tr className="tableRow">
            <th>USER</th>
            <th>Process ID</th>
@@ -41,9 +40,8 @@ console.log(err);
            <th>TIME</th>     
            <th>COMMAND</th>                         
           </tr>
-          </thead>
-          <tbody>
-        </tbody>
+
+            {rows.map(row=> <RowComponent row={row} />)}
         </table>
       </div>
 
