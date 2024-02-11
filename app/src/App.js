@@ -20,11 +20,11 @@ console.log(err);
   return (
     <div className="App">
     
-      <h1 className="appTitle">Process Monitor</h1>
-      <div className="searchArea">
+      <h1 className="accent-stone-800">Process Monitor</h1>
+      <div className="searchArea ">
         searchArea
       </div>
-      <div className="processArea">
+      <div className="bg-stone-700 processArea">
       <div >
         <table className="tableArea">
           <tr className="tableRow">
