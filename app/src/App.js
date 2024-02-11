@@ -18,27 +18,27 @@ console.log(err);
   }
   },[]);
   return (
-    <div className="App">
+    <div className="App bg-stone-800">
     
-      <h1 className="accent-stone-800">Process Monitor</h1>
+      <h1 className="text-lime-300">Process Monitor</h1>
       <div className="searchArea ">
         searchArea
       </div>
-      <div className="bg-stone-700 processArea">
+      <div className="processArea">
       <div >
-        <table className="tableArea">
-          <tr className="tableRow">
-           <th>USER</th>
-           <th>Process ID</th>
-           <th>RAM Usage %</th>
-           <th>Memory Usage %</th>        
-           <th>VSZ</th>        
-           <th>RSS</th>
-           <th>TTY</th>
-           <th>STAT</th>   
-           <th>START</th>   
-           <th>TIME</th>     
-           <th>COMMAND</th>                         
+        <table className=" table-auto border border-collapse border-dotted border-lime-300 ">
+          <tr className="m-10 p-10 tableRow">
+           <th className='m-2 p-2 border border-lime-300 text-lime-300'>USER</th>
+           <th className=' m-2 p-2 border border-lime-300 text-lime-300'>Process ID</th>
+           <th className=' m-2 p-2 border border-lime-300 text-lime-300'>RAM Usage %</th>
+           <th className=' m-2 p-2 border border-lime-300 text-lime-300'>Memory Usage %</th>        
+           <th className=' m-2 p-2 border border-lime-300 text-lime-300'>VSZ</th>        
+           <th className=' m-2 p-2 border border-lime-300 text-lime-300'>RSS</th>
+           <th className=' m-2 p-2 border border-lime-300 text-lime-300'>TTY</th>
+           <th className=' m-2 p-2 border border-lime-300 text-lime-300'>STAT</th>   
+           <th className=' m-2 p-2 border border-lime-300 text-lime-300'>START</th>   
+           <th className=' m-2 p-2 border border-lime-300 text-lime-300'>TIME</th>     
+           <th className=' m-2 p-2 border border-lime-300 text-lime-300'>COMMAND</th>                         
           </tr>
 
             {rows.map(row=> <RowComponent row={row} />)}
@@ -68,17 +68,17 @@ console.log(err);
 function RowComponent({row}){
 return(
   <tr>
-    <td>{row.USER}</td>
-    <td>{row.PID}</td>
-    <td>{row['%CPU']}</td>
-    <td>{row['%MEM']}</td>
-    <td>{row.VSZ}</td>
-    <td>{row.RSS}</td>
-    <td>{row.TTY}</td>
-    <td>{row.STAT}</td>
-    <td>{row.START}</td>
-    <td>{row.TIME}</td>
-    <td>{row.COMMAND}</td>
+    <td className='border border-lime-300 text-white'>{row.USER}</td>
+    <td className='border border-lime-300 text-white'>{row.PID}</td>
+    <td className='border border-lime-300 text-white'>{row['%CPU']}</td>
+    <td className='border border-lime-300 text-white'>{row['%MEM']}</td>
+    <td className='border border-lime-300 text-white'>{row.VSZ}</td>
+    <td className='border border-lime-300 text-white'>{row.RSS}</td>
+    <td className='border border-lime-300 text-white'>{row.TTY}</td>
+    <td className='border border-lime-300 text-white'>{row.STAT}</td>
+    <td className='border border-lime-300 text-white'>{row.START}</td>
+    <td className='border border-lime-300 text-white'>{row.TIME}</td>
+    <td className='border border-lime-300 text-white'>{row.COMMAND}</td>
   </tr>
 );
 }
